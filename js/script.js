@@ -1,16 +1,17 @@
+
 function playerMove(board, line, column) {
     if (board[line][column] === 0) {
         markPosition(board, line, column);
-        if (gameOver(board, 1)) {
+        if (gameOver(board)) {
             alert('Você ganhou!');
         } else {
             setTimeout(() => {
-				aiCutOff(board, 1)
-//                aiMove(board);
+                aiMove(board);
             }, 500);
         }
     }
 }
+
 function aiMove(board) {
     // random ai move
     let line;

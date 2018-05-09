@@ -1,3 +1,4 @@
+
 function geraCandidatos(linha, coluna, dimensao){
 //alert("entrou candidatos linha"+linha+"coluna "+coluna+"dimensao "+dimensao)
 	//forma os candidatos
@@ -220,8 +221,6 @@ function calculaMinimax(board, player = 1, profundidade = 0){
 	var boardLocal
 	var retorno  = [-10*player,[0,0], 100*profundidade]
 	var provisorio  = [0,[0,0], profundidade]
-	var contador = 0
-	
 	//separa peças em três vetores
 //alert(++contador)
 	   for (let i = 0; i < size; i++) {
@@ -242,9 +241,9 @@ function calculaMinimax(board, player = 1, profundidade = 0){
 
 	//calculo do MINIMAX
 	contadorMinimax = 0
-	while((jogada = brancas.pop()) && (retorno[0] != player) && contador < 3){ //para tirar o alfa beta basta tirar a última condição do and
+	while((jogada = brancas.pop()) && (retorno[0] != player)){ //para tirar o alfa beta basta tirar a última condição do and
 //alert("contador"+contador)
-contador++
+
 		boardLocal = board.slice()
 //	alert(board)
 //	alert(JSON.stringify([player,[jogada[0],jogada[1]]]))
